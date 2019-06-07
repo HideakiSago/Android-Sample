@@ -15,13 +15,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView message = findViewById(R.id.message);
+        // テキストやボタンの情報を取得します。
+        final TextView text = findViewById(R.id.message);
         final Button button = findViewById(R.id.button);
 
+        // ボタンをクリックしたときに動かす処理を登録します。
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                message.setText("Count: " + count);
+                // テキストにメッセージを表示します。
+                text.setText("Count: " + count);
+                // カウントを上げます。
                 count = count + 1;
             }
         });
